@@ -1,0 +1,27 @@
+//
+//  UserProfile.JSON
+//  IOSExam
+//
+//  Created by Criselda Aguilar on 8/29/23.
+//
+
+[
+    {
+        "id": "123-456-789-abc-def",
+        "first_name": "Mang",
+        "last_name": "Tani",
+        "mobile": "9123456789",
+        "is_verified": false,
+        "referral_code": "qwe123"
+    },
+    {
+        "id": "123-456-789-abc-def",
+        "first_name": "Mang",
+        "last_name": "Jose",
+        "mobile": "9987654321",
+        "is_verified": true,
+        "referral_code": "asd456"
+    }
+    
+    
+]

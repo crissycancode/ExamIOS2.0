@@ -1,0 +1,21 @@
+//
+//  Login.JSON
+//  IOSExam
+//
+//  Created by Criselda Aguilar on 8/29/23.
+//
+
+import Foundation
+
+[{
+    "id": 1,
+    "name": "Shopee 100Php Off",
+    "description": "100Php off on Shopee with a minimum purchase of 1000Php!",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjAk8-sic9MUEOpyMJXpnQkbLz2wUMOmUvYep80A8FRbH3bVeb&s"
+},
+{
+    "id": 2,
+    "name": "Zalora Free Delivery",
+    "description": "Free delivery on any order from Zalora.",
+    "image": "https://static-sg.zacdn.com/cms/zaloranow/ZNOW_FA_LOGOS_PRIMARY_BLACK.png"
+}]
