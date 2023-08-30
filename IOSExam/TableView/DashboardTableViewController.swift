@@ -36,11 +36,15 @@ class DashboardTableViewController: UITableViewController {
         dataSource = UITableViewDiffableDataSource<Section, DataModel>(
             tableView: tableView,
             cellProvider: { tableView, indexPath, item in
-                // Dequeue the custom cell
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
-                // string url for the image
                 cell.imageUrl = item.image
                 cell.descriptionLabel.text = item.description
+                
+                self.loadImageFromURL(urlString: item.image) { image in
+                    if let image = image {
+                        cell.rewardsImage.image = image
+                    }
+                }
                 return cell
             }
         )
@@ -70,13 +74,42 @@ class DashboardTableViewController: UITableViewController {
         let view = storyboard.instantiateViewController(withIdentifier: "Details") as! DetailsViewController
         view.modalPresentationStyle = .fullScreen
         
-        let selectedRow = indexPath.row
         let selectedData = dataSource.itemIdentifier(for: indexPath)
- 
-            // Set the properties with the selected data
         view.desc = selectedData?.description ?? ""
-        view.image = selectedData?.image ?? ""
         view.rewards = selectedData?.name ?? ""
+        
+        self.loadImageFromURL(urlString: selectedData?.image ?? "") { image in
+            if let image = image {
+                view.rewardsImage.image = image
+            }
+        }
+        
         self.present(view, animated: false)
+    }
+
+    func loadImageFromURL(urlString: String, completion: @escaping (UIImage?) -> Void) {
+        guard let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+
+
+        URLSession.shared.dataTask(with: url) { data, _, error in
+
+            if let error = error {
+                print("Error downloading image: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+
+            guard let data = data, let image = UIImage(data: data) else {
+                completion(nil)
+                return
+            }
+
+            DispatchQueue.main.async {
+                completion(image)
+            }
+        }.resume()
     }
 }

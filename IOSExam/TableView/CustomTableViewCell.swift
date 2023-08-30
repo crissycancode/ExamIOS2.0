@@ -31,7 +31,7 @@ class CustomTableViewCell: UITableViewCell {
         cellContentView.layer.shadowOffset = CGSize(width: 0, height: 2)
         cellContentView.layer.shadowRadius = 4
         
-        image()
+//        image()
         
     }
     
@@ -39,25 +39,25 @@ class CustomTableViewCell: UITableViewCell {
     func configure(with item: DataModel) {
         
     }
-    
-    func image() {
-        let imageUrlString = imageUrl
-        if let imageUrl = URL(string: imageUrlString) {
-            let task = URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                    return
-                }
-                
-                if let data = data, let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self.rewardsImage.image = image
-                    }
-                }
-            }
-            task.resume()
-        } else {
-            print("Invalid image URL")
-        }
-    }
+//
+//    func image() {
+//        let imageUrlString = imageUrl
+//        if let imageUrl = URL(string: imageUrlString) {
+//            let task = URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
+//                if let error = error {
+//                    print("Error: \(error.localizedDescription)")
+//                    return
+//                }
+//
+//                if let data = data, let image = UIImage(data: data) {
+//                    DispatchQueue.main.async {
+//                        self.rewardsImage.image = image
+//                    }
+//                }
+//            }
+//            task.resume()
+//        } else {
+//            print("Invalid image URL")
+//        }
+//    }
 }
