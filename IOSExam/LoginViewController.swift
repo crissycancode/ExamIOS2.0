@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "DashboardNavigationController") as! UINavigationController
         view.modalPresentationStyle = .fullScreen
         self.present(view, animated: false)

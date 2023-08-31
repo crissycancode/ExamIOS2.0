@@ -14,18 +14,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RewardsEntity.self
+//        RewardsEntity.self
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
         view.modalPresentationStyle = .fullScreen
         self.present(view, animated: false)
     }
-    
+
     @IBAction func registerButtonAction(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Register", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "Register") as! RegisterViewController
         view.modalPresentationStyle = .fullScreen
         self.present(view, animated: false)

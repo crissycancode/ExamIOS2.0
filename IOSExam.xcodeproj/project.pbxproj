@@ -13,20 +13,16 @@
 		FF0FC4CC2A9B66FF001B2F03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0FC4CA2A9B66FF001B2F03 /* Main.storyboard */; };
 		FF0FC4D12A9B6701001B2F03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0FC4D02A9B6701001B2F03 /* Assets.xcassets */; };
 		FF0FC4D42A9B6701001B2F03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0FC4D22A9B6701001B2F03 /* LaunchScreen.storyboard */; };
-		FF1988972A9BA95200D45DE4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1988962A9BA95200D45DE4 /* Login.storyboard */; };
 		FF1988992A9BA97D00D45DE4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1988982A9BA97D00D45DE4 /* LoginViewController.swift */; };
-		FF19889B2A9BC74400D45DE4 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF19889A2A9BC74400D45DE4 /* Register.storyboard */; };
 		FF19889F2A9BC77800D45DE4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF19889E2A9BC77800D45DE4 /* RegisterViewController.swift */; };
 		FF1988A12A9C6F0E00D45DE4 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1988A02A9C6F0E00D45DE4 /* CustomTextField.swift */; };
 		FF9D2E2A2A9FB11800F91BF3 /* RewardsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF9D2E282A9FB11800F91BF3 /* RewardsApp.xcdatamodeld */; };
 		FFA0A42F2A9DB524009B4E1A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0A42E2A9DB524009B4E1A /* DataModel.swift */; };
 		FFB1D2652AA076A900CE238D /* RewardsEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB1D2632AA076A900CE238D /* RewardsEntity+CoreDataClass.swift */; };
 		FFB1D2662AA076A900CE238D /* RewardsEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB1D2642AA076A900CE238D /* RewardsEntity+CoreDataProperties.swift */; };
-		FFBBE0522A9E23F900BE650B /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBBE0512A9E23F900BE650B /* Details.storyboard */; };
 		FFBBE0542A9E24FB00BE650B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBBE0532A9E24FB00BE650B /* DetailsViewController.swift */; };
 		FFBBE0562A9E434000BE650B /* UserProfile.JSON in Resources */ = {isa = PBXBuildFile; fileRef = FFBBE0552A9E434000BE650B /* UserProfile.JSON */; };
 		FFBBE0582A9E44A400BE650B /* Rewards.JSON in Resources */ = {isa = PBXBuildFile; fileRef = FFBBE0572A9E44A400BE650B /* Rewards.JSON */; };
-		FFE50E072A9C8D8700AC5FF6 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE50E062A9C8D8600AC5FF6 /* Dashboard.storyboard */; };
 		FFE50E092A9C8D9A00AC5FF6 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE50E082A9C8D9A00AC5FF6 /* DashboardViewController.swift */; };
 		FFE50E0B2A9CA14500AC5FF6 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE50E0A2A9CA14500AC5FF6 /* DashboardTableViewController.swift */; };
 		FFEF4DE52A9CE2FB00A510FA /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEF4DE32A9CE2FB00A510FA /* CustomTableViewCell.swift */; };
@@ -42,20 +38,16 @@
 		FF0FC4D02A9B6701001B2F03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF0FC4D32A9B6701001B2F03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF0FC4D52A9B6701001B2F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF1988962A9BA95200D45DE4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		FF1988982A9BA97D00D45DE4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		FF19889A2A9BC74400D45DE4 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		FF19889E2A9BC77800D45DE4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FF1988A02A9C6F0E00D45DE4 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		FF9D2E292A9FB11800F91BF3 /* RewardsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RewardsApp.xcdatamodel; sourceTree = "<group>"; };
 		FFA0A42E2A9DB524009B4E1A /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		FFB1D2632AA076A900CE238D /* RewardsEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RewardsEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FFB1D2642AA076A900CE238D /* RewardsEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RewardsEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FFBBE0512A9E23F900BE650B /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		FFBBE0532A9E24FB00BE650B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		FFBBE0552A9E434000BE650B /* UserProfile.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserProfile.JSON; sourceTree = "<group>"; };
 		FFBBE0572A9E44A400BE650B /* Rewards.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Rewards.JSON; sourceTree = "<group>"; };
-		FFE50E062A9C8D8600AC5FF6 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		FFE50E082A9C8D9A00AC5FF6 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		FFE50E0A2A9CA14500AC5FF6 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		FFEF4DE32A9CE2FB00A510FA /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -105,10 +97,6 @@
 				FFE50E082A9C8D9A00AC5FF6 /* DashboardViewController.swift */,
 				FFBBE0532A9E24FB00BE650B /* DetailsViewController.swift */,
 				FF9D2E282A9FB11800F91BF3 /* RewardsApp.xcdatamodeld */,
-				FFBBE0512A9E23F900BE650B /* Details.storyboard */,
-				FFE50E062A9C8D8600AC5FF6 /* Dashboard.storyboard */,
-				FF19889A2A9BC74400D45DE4 /* Register.storyboard */,
-				FF1988962A9BA95200D45DE4 /* Login.storyboard */,
 				FF0FC4CA2A9B66FF001B2F03 /* Main.storyboard */,
 				FFBBE0552A9E434000BE650B /* UserProfile.JSON */,
 				FFBBE0572A9E44A400BE650B /* Rewards.JSON */,
@@ -187,16 +175,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF1988972A9BA95200D45DE4 /* Login.storyboard in Resources */,
 				FFBBE0582A9E44A400BE650B /* Rewards.JSON in Resources */,
 				FFEF4DE62A9CE2FB00A510FA /* CustomTableViewCell.xib in Resources */,
-				FFE50E072A9C8D8700AC5FF6 /* Dashboard.storyboard in Resources */,
 				FFBBE0562A9E434000BE650B /* UserProfile.JSON in Resources */,
 				FF0FC4D42A9B6701001B2F03 /* LaunchScreen.storyboard in Resources */,
 				FF0FC4D12A9B6701001B2F03 /* Assets.xcassets in Resources */,
 				FF0FC4CC2A9B66FF001B2F03 /* Main.storyboard in Resources */,
-				FF19889B2A9BC74400D45DE4 /* Register.storyboard in Resources */,
-				FFBBE0522A9E23F900BE650B /* Details.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
