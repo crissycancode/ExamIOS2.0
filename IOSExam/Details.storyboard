@@ -20,25 +20,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qZW-Lg-Wq6">
                                 <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJI-9a-Zup">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
-                                        <subviews>
-                                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imr-yT-cJ1">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
-                                                <items>
-                                                    <navigationItem id="uao-Un-QEt" userLabel="back">
-                                                        <barButtonItem key="leftBarButtonItem" title="Back" id="UOK-rQ-SHE">
-                                                            <connections>
-                                                                <action selector="backBarButtonAction:" destination="Y6W-OH-hqX" id="0RG-1D-s7G"/>
-                                                            </connections>
-                                                        </barButtonItem>
-                                                    </navigationItem>
-                                                </items>
-                                            </navigationBar>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="i81-hc-3JN">
-                                        <rect key="frame" x="0.0" y="44" width="393" height="666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="710"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2CP-P5-gde">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="220"/>
@@ -52,7 +35,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="l4B-kI-3Aw">
-                                                <rect key="frame" x="0.0" y="232" width="393" height="434"/>
+                                                <rect key="frame" x="0.0" y="232" width="393" height="478"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="8R5-zq-GAu">
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="56.333333333333336"/>
@@ -90,7 +73,6 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="backBarButton" destination="UOK-rQ-SHE" id="GRa-TR-jmw"/>
                         <outlet property="descriptionLabel" destination="3wW-G7-vUg" id="eDW-fq-vKG"/>
                         <outlet property="rewardsImage" destination="zfv-7v-BPx" id="zgc-8f-PXZ"/>
                         <outlet property="rewardsLabel" destination="xSr-jf-dhn" id="Efj-Sk-Ibe"/>

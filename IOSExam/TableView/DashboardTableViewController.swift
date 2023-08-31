@@ -71,20 +71,20 @@ class DashboardTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Details", bundle: nil)
-        let view = storyboard.instantiateViewController(withIdentifier: "Details") as! DetailsViewController
-        view.modalPresentationStyle = .fullScreen
+        let viewController = storyboard.instantiateViewController(withIdentifier: "Details") as! DetailsViewController
+        viewController.modalPresentationStyle = .fullScreen
         
         let selectedData = dataSource.itemIdentifier(for: indexPath)
-        view.desc = selectedData?.description ?? ""
-        view.rewards = selectedData?.name ?? ""
+        viewController.desc = selectedData?.description ?? ""
+        viewController.rewards = selectedData?.name ?? ""
         
         self.loadImageFromURL(urlString: selectedData?.image ?? "") { image in
             if let image = image {
-                view.rewardsImage.image = image
+                viewController.rewardsImage.image = image
             }
         }
-        
-        self.present(view, animated: false)
+        self.navigationController?.pushViewController(viewController, animated: true)
+//        self.present(view, animated: false)
     }
 
     func loadImageFromURL(urlString: String, completion: @escaping (UIImage?) -> Void) {

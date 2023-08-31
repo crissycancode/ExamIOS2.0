@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        RewardsEntity.self
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
