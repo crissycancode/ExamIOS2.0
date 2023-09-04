@@ -12,6 +12,7 @@ class DashboardTableViewController: UITableViewController {
     @IBOutlet var dashboardTable: UITableView!
     var dataSource: UITableViewDiffableDataSource<Section, DataModel>!
     enum Section { case main }
+    var rewards: [RewardsEntity] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +22,14 @@ class DashboardTableViewController: UITableViewController {
         let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
         dashboardTable.register(nib, forCellReuseIdentifier: "CustomCell")
         
+        let coreDataStack = CoreDataStack() // Initialize your Core Data stack
+        let parser = JsonFileParser(coreDataStack: coreDataStack)
+        parser.parseJsonFile()
+        rewards = parser.getRewards()
+        
         configureDataSource()
         dashboardTable.delegate = self
         dashboardTable.dataSource = dataSource
-        
         applySnapshot()
     }
     
@@ -48,20 +53,11 @@ class DashboardTableViewController: UITableViewController {
 
     func applySnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, DataModel>()
+        let dataModels = rewards.map { reward in
+            DataModel(id: Int(reward.id), name: reward.name ?? "", description: reward.desc ?? "", image: reward.image ?? "")
+        }
         snapshot.appendSections([.main])
-        snapshot.appendItems([
-            DataModel(id: 1,
-                      name: "Shopee 100Php Off",
-                      description: "100Php off on Shopee with a minimum purchase of 1000Php!",
-                      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjAk8-sic9MUEOpyMJXpnQkbLz2wUMOmUvYep80A8FRbH3bVeb&s"),
-            DataModel(id: 2,
-                      name: "Zalora Free Delivery",
-                      description: "Free delivery on any order from Zalora.",
-                      image: "https://static-sg.zacdn.com/cms/zaloranow/ZNOW_FA_LOGOS_PRIMARY_BLACK.png"),
-            DataModel(id: 3,
-                      name: "Mang Inasal",
-                      description: "Free Extra Rice",
-                      image: "https://www.rappler.com/tachyon/r3-assets/612F469A6EA84F6BAE882D2B94A4B421/img/48C62896A45B47CAADB8124477BDB9D3/mang-inasal-20200331.jpg")], toSection: .main)
+        snapshot.appendItems(dataModels, toSection: .main)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
     

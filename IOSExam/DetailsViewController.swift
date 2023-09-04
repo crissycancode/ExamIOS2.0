@@ -29,37 +29,5 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         rewardsLabel.text = rewards
         descriptionLabel.text = desc
-        
-        readJsonFile()
-    }
-    
-    struct Reward: Codable {
-        let id: Int
-        let name: String
-        let description: String
-        let image: String
-    }
-    
-    func readJsonFile() {
-        guard let url = Bundle.main.url(forResource: "Rewards", withExtension: "JSON"),
-              let jsonData = try? Data(contentsOf: url) else {
-            fatalError("Failed to load JSON data")
-        }
-        
-        let decoder = JSONDecoder()
-
-        do {
-            let rewards = try decoder.decode([Reward].self, from: jsonData)
-            
-            // Now, 'rewards' contains an array of Reward objects.
-            for reward in rewards {
-                print("Reward ID: \(reward.id)")
-                print("Name: \(reward.name)")
-                print("Description: \(reward.description)")
-                print("Image URL: \(reward.image)")
-            }
-        } catch {
-            print("JSON decoding error: \(error.localizedDescription)")
-        }
     }
 }
