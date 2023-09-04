@@ -10,10 +10,8 @@ import UIKit
 class DashboardTableViewController: UITableViewController {
     
     @IBOutlet var dashboardTable: UITableView!
-    
-    enum Section {
-        case main
-    }
+    var dataSource: UITableViewDiffableDataSource<Section, DataModel>!
+    enum Section { case main }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +27,6 @@ class DashboardTableViewController: UITableViewController {
         
         applySnapshot()
     }
-    
-    var dataSource: UITableViewDiffableDataSource<Section, DataModel>!
     
     func configureDataSource() {
         dataSource = UITableViewDiffableDataSource<Section, DataModel>(
@@ -70,7 +66,7 @@ class DashboardTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Details", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "Details") as! DetailsViewController
         viewController.modalPresentationStyle = .fullScreen
         
@@ -92,10 +88,7 @@ class DashboardTableViewController: UITableViewController {
             completion(nil)
             return
         }
-
-
         URLSession.shared.dataTask(with: url) { data, _, error in
-
             if let error = error {
                 print("Error downloading image: \(error.localizedDescription)")
                 completion(nil)

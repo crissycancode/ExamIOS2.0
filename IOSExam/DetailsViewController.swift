@@ -16,9 +16,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var rewardsImage: UIImageView!
     @IBOutlet weak var rewardsLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var backBarButton: UIBarButtonItem!
-    
-    @IBAction func backBarButtonAction(_ sender: Any) {
+
 ////        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: <#T##String#>)
 //        let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
 //        let viewController = storyboard.instantiateViewController(withIdentifier: "Dashboard") as! DashboardViewController
@@ -26,8 +24,6 @@ class DetailsViewController: UIViewController {
 //        self.present(viewController, animated: false)
         
 //        self.dismiss(animated: true)
-        self.navigationController?.popViewController(animated: true)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
