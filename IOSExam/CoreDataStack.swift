@@ -23,10 +23,6 @@ class CoreDataStack {
         return persistentContainer.viewContext
     }
 
-    var viewContext: NSManagedObjectContext {
-        return persistentContainer.viewContext
-    }
-
     func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -43,24 +39,23 @@ class CoreDataStack {
         let fetchRequest: NSFetchRequest<RewardsEntity> = RewardsEntity.fetchRequest()
         do {
             let rewards = try managedObjectContext.fetch(fetchRequest)
-            return filterResults(rewards) as! [RewardsEntity]
+            return rewards
         } catch {
             print("Error fetching data: \(error.localizedDescription)")
         }
         return []
     }
+
     
-    func filterResults(_ rewards: [Any]) -> [Any] {
-        var uniqueRewardIDs = Set<Int>()
-        let uniqueRewards = rewards.filter { reward in
-            let rewardID = (reward as AnyObject).id
-            if uniqueRewardIDs.contains(Int(rewardID!)) {
-                return false
-            } else {
-                uniqueRewardIDs.insert(Int(rewardID!))
-                return true
-            }
+    func isEntityEmpty(forEntityName entityName: String, managedObjectContext: NSManagedObjectContext) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        
+        do {
+            let count = try managedObjectContext.count(for: fetchRequest)
+            return count == 0
+        } catch {
+            print("Error counting objects for entity: \(error)")
+            return false
         }
-        return Array(uniqueRewards) as! [Any]
     }
 }

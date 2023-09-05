@@ -21,7 +21,6 @@ class JsonFileParser {
     
     // Reference to your Core Data stack
     let coreDataStack: CoreDataStack
-    
     init(coreDataStack: CoreDataStack) {
         self.coreDataStack = coreDataStack
     }
@@ -30,7 +29,6 @@ class JsonFileParser {
         guard let url = Bundle.main.url(forResource: "Reward", withExtension: "json") else {
             fatalError("Failed to locate Rewards.JSON in the bundle.")
         }
-        
         do {
             let jsonData = try Data(contentsOf: url)
             let decoder = JSONDecoder()
@@ -40,9 +38,12 @@ class JsonFileParser {
             print("Error decoding JSON data: \(error.localizedDescription)")
         }
     }
-    
+
     private func insertRewardsIntoCoreData(_ rewards: [Reward]) {
         let context = coreDataStack.persistentContainer.viewContext
+        let isEmpty = coreDataStack.isEntityEmpty(forEntityName: "RewardsEntity", managedObjectContext: context)
+        
+        guard isEmpty == true else { return }
 
         for reward in rewards {
             let rewardID = Int64(reward.id)
