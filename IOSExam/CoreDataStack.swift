@@ -9,6 +9,7 @@ import Foundation
 import CoreData
 
 class CoreDataStack {
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "RewardsApp")
         container.loadPersistentStores { _, error in
@@ -34,19 +35,12 @@ class CoreDataStack {
             }
         }
     }
-    
-    func fetchRewards() -> [RewardsEntity] {
-        let fetchRequest: NSFetchRequest<RewardsEntity> = RewardsEntity.fetchRequest()
-        do {
-            let rewards = try managedObjectContext.fetch(fetchRequest)
-            return rewards
-        } catch {
-            print("Error fetching data: \(error.localizedDescription)")
-        }
-        return []
-    }
 
-    
+    /// Check if the Entity is empty
+    /// - Parameters:
+    ///   - entityName: coredata entity
+    ///   - managedObjectContext: --
+    /// - Returns: boolean value
     func isEntityEmpty(forEntityName entityName: String, managedObjectContext: NSManagedObjectContext) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         
@@ -58,4 +52,5 @@ class CoreDataStack {
             return false
         }
     }
+
 }

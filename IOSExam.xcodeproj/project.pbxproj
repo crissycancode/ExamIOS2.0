@@ -25,6 +25,9 @@
 		FFBD55C02AA5EE4D00953D71 /* JsonFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD55BF2AA5EE4D00953D71 /* JsonFileParser.swift */; };
 		FFBD55C22AA5F83A00953D71 /* Reward.json in Resources */ = {isa = PBXBuildFile; fileRef = FFBD55C12AA5F83A00953D71 /* Reward.json */; };
 		FFBD55C42AA6104200953D71 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD55C32AA6104200953D71 /* CoreDataStack.swift */; };
+		FFBD55D32AA7670600953D71 /* UserProfileEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD55D12AA7670600953D71 /* UserProfileEntity+CoreDataClass.swift */; };
+		FFBD55D42AA7670600953D71 /* UserProfileEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD55D22AA7670600953D71 /* UserProfileEntity+CoreDataProperties.swift */; };
+		FFBD55D62AA77E4300953D71 /* CoreDataStack+Rewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD55D52AA77E4300953D71 /* CoreDataStack+Rewards.swift */; };
 		FFE50E092A9C8D9A00AC5FF6 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE50E082A9C8D9A00AC5FF6 /* DashboardViewController.swift */; };
 		FFE50E0B2A9CA14500AC5FF6 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE50E0A2A9CA14500AC5FF6 /* DashboardTableViewController.swift */; };
 		FFEF4DE52A9CE2FB00A510FA /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEF4DE32A9CE2FB00A510FA /* CustomTableViewCell.swift */; };
@@ -52,6 +55,9 @@
 		FFBD55BF2AA5EE4D00953D71 /* JsonFileParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonFileParser.swift; sourceTree = "<group>"; };
 		FFBD55C12AA5F83A00953D71 /* Reward.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Reward.json; sourceTree = "<group>"; };
 		FFBD55C32AA6104200953D71 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		FFBD55D12AA7670600953D71 /* UserProfileEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfileEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FFBD55D22AA7670600953D71 /* UserProfileEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfileEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FFBD55D52AA77E4300953D71 /* CoreDataStack+Rewards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStack+Rewards.swift"; sourceTree = "<group>"; };
 		FFE50E082A9C8D9A00AC5FF6 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		FFE50E0A2A9CA14500AC5FF6 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		FFEF4DE32A9CE2FB00A510FA /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -72,6 +78,8 @@
 		FF0FC4B82A9B66FF001B2F03 = {
 			isa = PBXGroup;
 			children = (
+				FFBD55D12AA7670600953D71 /* UserProfileEntity+CoreDataClass.swift */,
+				FFBD55D22AA7670600953D71 /* UserProfileEntity+CoreDataProperties.swift */,
 				FFB1D2632AA076A900CE238D /* RewardsEntity+CoreDataClass.swift */,
 				FFB1D2642AA076A900CE238D /* RewardsEntity+CoreDataProperties.swift */,
 				FF0FC4C32A9B66FF001B2F03 /* IOSExam */,
@@ -109,6 +117,7 @@
 				FF0FC4D02A9B6701001B2F03 /* Assets.xcassets */,
 				FF0FC4D52A9B6701001B2F03 /* Info.plist */,
 				FFBD55C32AA6104200953D71 /* CoreDataStack.swift */,
+				FFBD55D52AA77E4300953D71 /* CoreDataStack+Rewards.swift */,
 			);
 			path = IOSExam;
 			sourceTree = "<group>";
@@ -204,15 +213,18 @@
 				FF9D2E2A2A9FB11800F91BF3 /* RewardsApp.xcdatamodeld in Sources */,
 				FFB1D2652AA076A900CE238D /* RewardsEntity+CoreDataClass.swift in Sources */,
 				FF19889F2A9BC77800D45DE4 /* RegisterViewController.swift in Sources */,
+				FFBD55D32AA7670600953D71 /* UserProfileEntity+CoreDataClass.swift in Sources */,
 				FFBD55C42AA6104200953D71 /* CoreDataStack.swift in Sources */,
 				FFB1D2662AA076A900CE238D /* RewardsEntity+CoreDataProperties.swift in Sources */,
 				FFA0A42F2A9DB524009B4E1A /* DataModel.swift in Sources */,
+				FFBD55D62AA77E4300953D71 /* CoreDataStack+Rewards.swift in Sources */,
 				FF1988992A9BA97D00D45DE4 /* LoginViewController.swift in Sources */,
 				FF0FC4C72A9B66FF001B2F03 /* SceneDelegate.swift in Sources */,
 				FFBD55C02AA5EE4D00953D71 /* JsonFileParser.swift in Sources */,
 				FFE50E0B2A9CA14500AC5FF6 /* DashboardTableViewController.swift in Sources */,
 				FFE50E092A9C8D9A00AC5FF6 /* DashboardViewController.swift in Sources */,
 				FFBBE0542A9E24FB00BE650B /* DetailsViewController.swift in Sources */,
+				FFBD55D42AA7670600953D71 /* UserProfileEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

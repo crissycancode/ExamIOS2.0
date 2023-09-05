@@ -17,20 +17,23 @@ class DashboardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dashboardTable.separatorStyle = .none
+        rewards = fetchRewards()
         
         let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
         dashboardTable.register(nib, forCellReuseIdentifier: "CustomCell")
-        
-        let coreDataStack = CoreDataStack() // Initialize your Core Data stack
-        let parser = JsonFileParser(coreDataStack: coreDataStack)
-        parser.parseJsonFile()
-        rewards = parser.getRewards()
+        dashboardTable.separatorStyle = .none
         
         configureDataSource()
         dashboardTable.delegate = self
         dashboardTable.dataSource = dataSource
         applySnapshot()
+    }
+    
+    /// Retrieves the rewards data
+    /// - Returns: list of rewards in an array
+    func fetchRewards() -> [RewardsEntity] {
+        let coreDataStack = CoreDataStack()
+        return coreDataStack.fetchRewards()
     }
     
     func configureDataSource() {
@@ -76,7 +79,6 @@ class DashboardTableViewController: UITableViewController {
             }
         }
         self.navigationController?.pushViewController(viewController, animated: true)
-//        self.present(view, animated: false)
     }
 
     func loadImageFromURL(urlString: String, completion: @escaping (UIImage?) -> Void) {
