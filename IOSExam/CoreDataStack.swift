@@ -43,26 +43,14 @@ class CoreDataStack {
         let fetchRequest: NSFetchRequest<RewardsEntity> = RewardsEntity.fetchRequest()
         do {
             let rewards = try managedObjectContext.fetch(fetchRequest)
-            
-//            var uniqueRewardIDs = Set<Int>()
-//            let uniqueRewards = rewards.filter { reward in
-//                let rewardID = reward.id
-//                if uniqueRewardIDs.contains(Int(rewardID)) {
-//                    return false
-//                } else {
-//                    uniqueRewardIDs.insert(Int(rewardID))
-//                    return true
-//                }
-//            }
-            
-            return filterRequest(rewards) as! [RewardsEntity]
+            return filterResults(rewards) as! [RewardsEntity]
         } catch {
             print("Error fetching data: \(error.localizedDescription)")
         }
         return []
     }
     
-    func filterRequest(_ rewards: [Any]) -> [Any] {
+    func filterResults(_ rewards: [Any]) -> [Any] {
         var uniqueRewardIDs = Set<Int>()
         let uniqueRewards = rewards.filter { reward in
             let rewardID = (reward as AnyObject).id

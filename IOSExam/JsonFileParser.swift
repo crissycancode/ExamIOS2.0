@@ -72,20 +72,6 @@ class JsonFileParser {
     }
 
     func getRewards() -> [RewardsEntity] {
-        
-//        let rewards = coreDataStack.fetchRewards()
-//        var uniqueRewardIDs = Set<Int>()
-//
-//        let uniqueRewards = rewards.filter { reward in
-//            let rewardID = reward.id
-//            if uniqueRewardIDs.contains(Int(rewardID)) {
-//                return false
-//            } else {
-//                uniqueRewardIDs.insert(Int(rewardID))
-//                return true
-//            }
-//        }
-        
         return coreDataStack.fetchRewards()
     }
 }
