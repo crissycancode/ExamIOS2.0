@@ -23,6 +23,11 @@ struct UserProfile: Decodable {
     let referral_code: String
 }
 
+struct Login: Decodable {
+    let mobile: String
+    let mpin: String
+}
+
 class JsonFileParser {
 
     /// Parse JSON
