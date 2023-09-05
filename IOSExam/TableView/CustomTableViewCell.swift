@@ -32,7 +32,7 @@ class CustomTableViewCell: UITableViewCell {
         cellContentView.layer.shadowRadius = 4
     }
     
-    func configure(with item: DataModel) {
+    func configure(with item: RewardsDataModel) {
         // customer methods if needed
     }
 }

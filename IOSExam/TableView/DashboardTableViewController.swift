@@ -10,7 +10,7 @@ import UIKit
 class DashboardTableViewController: UITableViewController {
     
     @IBOutlet var dashboardTable: UITableView!
-    var dataSource: UITableViewDiffableDataSource<Section, DataModel>!
+    var dataSource: UITableViewDiffableDataSource<Section, RewardsDataModel>!
     enum Section { case main }
     var rewards: [RewardsEntity] = []
     
@@ -34,7 +34,7 @@ class DashboardTableViewController: UITableViewController {
     }
     
     func configureDataSource() {
-        dataSource = UITableViewDiffableDataSource<Section, DataModel>(
+        dataSource = UITableViewDiffableDataSource<Section, RewardsDataModel>(
             tableView: tableView,
             cellProvider: { tableView, indexPath, item in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
@@ -52,12 +52,12 @@ class DashboardTableViewController: UITableViewController {
     }
 
     func applySnapshot() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, DataModel>()
-        let dataModels = rewards.map { reward in
-            DataModel(id: Int(reward.id), name: reward.name ?? "", description: reward.desc ?? "", image: reward.image ?? "")
+        var snapshot = NSDiffableDataSourceSnapshot<Section, RewardsDataModel>()
+        let rewardsDataModels = rewards.map { reward in
+            RewardsDataModel(id: Int(reward.id), name: reward.name ?? "", description: reward.desc ?? "", image: reward.image ?? "")
         }
         snapshot.appendSections([.main])
-        snapshot.appendItems(dataModels, toSection: .main)
+        snapshot.appendItems(rewardsDataModels, toSection: .main)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
     

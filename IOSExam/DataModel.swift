@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DataModel: Hashable {
+struct RewardsDataModel: Hashable {
     let id: Int
     let name: String
     let description: String
@@ -20,7 +20,7 @@ struct DataModel: Hashable {
         hasher.combine(image)
     }
     
-    static func == (lhs: DataModel, rhs: DataModel) -> Bool {
+    static func == (lhs: RewardsDataModel, rhs: RewardsDataModel) -> Bool {
         return  lhs.id == rhs.id &&
         lhs.name == rhs.name &&
         lhs.description == rhs.description &&
