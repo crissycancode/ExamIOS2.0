@@ -19,16 +19,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     
     @IBAction func backButtonAction(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let view = storyboard.instantiateViewController(withIdentifier: "Main") as! ViewController
-        view.modalPresentationStyle = .fullScreen
-        self.present(view, animated: false)
+        self.dismiss(animated: true)
     }
     @IBAction func registerButtonAction(_ sender: Any) {
         if mpinTextField.text == confirmMpinTextField.text {
             // TODO: go to next screen
         } else {
-            // TODO: prompt about the mpin should match
+            // TODO: prompt about the mpin should match using alert
         }
     }
     

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         CoreDataStack().loadLogin()
+        CoreDataStack().loadUserProfiles()
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {

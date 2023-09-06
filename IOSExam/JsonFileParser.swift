@@ -14,12 +14,12 @@ struct Reward: Decodable {
     let image: String
 }
 
-struct UserProfile: Decodable {
+struct User: Decodable {
     let id: String
     let first_name: String
     let last_name: String
     let mobile: String
-    let is_verified: String
+    let is_verified: Bool
     let referral_code: String
 }
 

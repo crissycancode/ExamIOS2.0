@@ -20,12 +20,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
-        
-        let login = mobileNumberTextField.text ?? ""
-        let password = mpinTextField.text ?? ""
-        
         let canLogin = CoreDataStack().fetchLoginEntitiesFromCoreData(login: "9123456789", password: "1234")   // while developing only
-        
+//        let login = mobileNumberTextField.text ?? ""
+//        let password = mpinTextField.text ?? ""
 //        let canLogin = CoreDataStack().fetchLoginEntitiesFromCoreData(login: login, password: password)
 //
         guard canLogin == true else { return }
@@ -33,6 +30,8 @@ class LoginViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "DashboardNavigationController") as! UINavigationController
         view.modalPresentationStyle = .fullScreen
+        let dashboard = view.viewControllers.first as! DashboardViewController
+        dashboard.mobileNumber = "9123456789"
         self.present(view, animated: false)
     }
     
