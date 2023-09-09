@@ -9,12 +9,13 @@ import Foundation
 import CoreData
 
 extension CoreDataStack {
+    
     func loadUserProfiles() {
         let context = persistentContainer.viewContext
         let isEmpty = isEntityEmpty(forEntityName: "UserEntity", managedObjectContext: context)
         guard isEmpty == true else {return}
-        let parser = JsonFileParser()
-        if let users: [User] = parser.parseJsonFile("User") {
+        let parser = JSONFileManager()
+        if let users: [User] = parser.parse("User") {
             print(users)
             insertUsersIntoCoreData(users)
         } else {
@@ -22,7 +23,7 @@ extension CoreDataStack {
         }
     }
     
-    private func insertUsersIntoCoreData(_ users: [User]) {
+    func insertUsersIntoCoreData(_ users: [User]) {
         let context = persistentContainer.viewContext
         for user in users {
             let mobile = user.mobile

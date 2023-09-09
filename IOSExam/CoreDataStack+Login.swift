@@ -15,8 +15,8 @@ extension CoreDataStack {
 
         guard isEmpty == true else { return }
 
-        let parser = JsonFileParser()
-        if let login: [Login] = parser.parseJsonFile("Login") {
+        let parser = JSONFileManager()
+        if let login: [Login] = parser.parse("Login") {
             insertLoginsIntoCoreData(login)
         } else {
             print("Parsing failed.")
@@ -35,7 +35,7 @@ extension CoreDataStack {
         return false
     }
     
-    private func insertLoginsIntoCoreData(_ logins: [Login]) {
+    func insertLoginsIntoCoreData(_ logins: [Login]) {
         let context = persistentContainer.viewContext
         for login in logins {
             let mobile = login.mobile

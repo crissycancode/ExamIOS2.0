@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         CoreDataStack().loadLogin()
         CoreDataStack().loadUserProfiles()
+        CoreDataStack().loadRegisteredUsers()
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {

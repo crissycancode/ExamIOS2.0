@@ -16,8 +16,8 @@ extension CoreDataStack {
         
         guard isEmpty == true else { return fetchRewardsEntitiesFromCoreData() }
         
-        let parser = JsonFileParser()
-        if let parsedRewards: [Reward] = parser.parseJsonFile("Reward") {
+        let parser = JSONFileManager()
+        if let parsedRewards: [Reward] = parser.parse("Reward") {
             insertRewardsIntoCoreData(parsedRewards)
         } else {
             print("Parsing failed.")
